@@ -32,6 +32,16 @@ During phase 3 we created Mock data through Mockaroo and updated our SQL file ac
 #### When making Mockaroo data we ran into some small issues, mainly due to Mockaroo not being able to create distinct Strings. Due to this we changed/added some Primary Keys which had to be integrs. This is because we could then use "Row Number" on Mockaroo to guarantee that they would be distinct. Due to this our SQL file was changed a fair amount from Phase 2, which in turn would make our diagram different as well. We hope that this is acceptable because there was no error in the original file, and that if nit using Mock Data, that file would have been able to stand.
 
 
+## Navigate
+#### SQL file with Mock data
+This can be found at db/SportsBettr.sql
 
+####Blueprints
+-System Admin Blueprint can be found under src/SystemAdmin/SystemAdmin.py
+-Verified User Blueprint can be found under src/VerifiedUser/VerifiedUser.py
 
-Test push
+####ThunderClient Tests
+-ThunderClient Tests can be found under thunder-tests/thunderclient.json
+
+### Please refer to docker-compose.yml for code behind setting up the web, db, and appsmith containers
+
