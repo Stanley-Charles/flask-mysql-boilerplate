@@ -5,24 +5,6 @@ from src import db
 
 SystemAdmin = Blueprint('SystemAdmin', __name__)
 
-# Get all the admins
-@SystemAdmin.route('/SystemAdmin', methods=['GET'])
-def get_systemadmin_posts():
-    cursor = db.get_db().cursor()
-    query = '''
-        SELECT FirstName
-        FROM SystemAdmin
-        LIMIT 5
-    '''
-    cursor.execute(query)
-    column_headers = [x[0] for x in cursor.description]
-    json_data = []
-    theData = cursor.fetchall()
-    for row in theData:
-        json_data.append(dict(zip(column_headers, row)))
-
-    return jsonify(json_data)
-
 @SystemAdmin.route('/allposts', methods=['GET'])
 def get_sitewide_posts():
     cursor = db.get_db().cursor()
@@ -153,3 +135,19 @@ def delete_comment():
     cursor.execute(the_query, (PostID, ReactionID))
     db.get_db().commit()
     return jsonify({"message": "Deleted comment successfully"}), 200
+
+#Make a login page for the system admin
+@SystemAdmin.route('/login', methods=['GET'])
+def admin_login():
+    the_data = request.json
+    AdminId = the_data['AdminId']
+    AdminPassword = the_data['AdminPassword']
+    the_query = 'SELECT * FROM SystemAdmin WHERE AdminId = %s AND AdminPassword = %s;'
+    cursor = db.get_db().cursor()
+    cursor.execute(the_query, (AdminId, AdminPassword))
+    result = cursor.fetchone()
+    if result:
+        return "Success"
+    else:
+        raise Exception("Incorrect credentials")
+

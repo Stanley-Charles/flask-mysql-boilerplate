@@ -10203,7 +10203,7 @@ Create TABLE IF NOT EXISTS Comment
     CONSTRAINT CMPK PRIMARY KEY (UserID, ReactionID, CommentText),
     CONSTRAINT fk_05 FOREIGN KEY (UserID, ReactionID)
         REFERENCES Reaction(UserID, ReactionID)
-        ON DELETE CASCADE
+        ON DELETE Cascade
 );
 
 INSERT INTO Comment(UserID,ReactionID,CommentText) VALUES ('jpearch0',1,'Aenean fermentum. Donec ut mauris eget massa tempor convallis.');
@@ -14261,4 +14261,3 @@ INSERT INTO PlayerProps(PlayerName,TeamID,PlayerProps,PropName) VALUES ('Oates B
 INSERT INTO PlayerProps(PlayerName,TeamID,PlayerProps,PropName) VALUES ('Laina Fussie',998,38007,'Ut tellus.');
 INSERT INTO PlayerProps(PlayerName,TeamID,PlayerProps,PropName) VALUES ('Waldo Ramsted',999,43584,'In hac habitasse platea dictumst.');
 INSERT INTO PlayerProps(PlayerName,TeamID,PlayerProps,PropName) VALUES ('Rebeca Grabiec',1000,62261,'Pellentesque ultrices mattis odio.');
-
