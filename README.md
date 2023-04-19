@@ -29,7 +29,7 @@ During phase 2 we made our ER diagrams as well as our SQL file for our database.
 During phase 3 we created Mock data through Mockaroo and updated our SQL file accordingly (more on this later). We then created 2 bluprints, one for the Verified User persona and one for the System Admin Persona. We then ..... (add when Appsmith done)
 
 #### Changes from phase 2 to 3 and disclaimers
-When making Mockaroo data we ran into some small issues, mainly due to Mockaroo not being able to create distinct Strings. Due to this we changed/added some Primary Keys which had to be integrs. This is because we could then use "Row Number" on Mockaroo to guarantee that they would be distinct. Due to this our SQL file was changed from Phase 2. 
+#### When making Mockaroo data we ran into some small issues, mainly due to Mockaroo not being able to create distinct Strings. Due to this we changed/added some Primary Keys which had to be integrs. This is because we could then use "Row Number" on Mockaroo to guarantee that they would be distinct. Due to this our SQL file was changed a fair amount from Phase 2, which in turn would make our diagram different as well. We hope that this is acceptable because there was no error in the original file, and that if nit using Mock Data, that file would have been able to stand.
 
 
 
