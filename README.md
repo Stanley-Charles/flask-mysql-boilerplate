@@ -33,15 +33,16 @@ During phase 3 we created Mock data through Mockaroo and updated our SQL file ac
 
 
 ## Navigate
+
 #### SQL file with Mock data
 This can be found at db/SportsBettr.sql
 
-####Blueprints
--System Admin Blueprint can be found under src/SystemAdmin/SystemAdmin.py
--Verified User Blueprint can be found under src/VerifiedUser/VerifiedUser.py
+#### Blueprints
+System Admin Blueprint can be found under src/SystemAdmin/SystemAdmin.py
+Verified User Blueprint can be found under src/VerifiedUser/VerifiedUser.py
 
-####ThunderClient Tests
+#### ThunderClient Tests
 -ThunderClient Tests can be found under thunder-tests/thunderclient.json
 
-### Please refer to docker-compose.yml for code behind setting up the web, db, and appsmith containers
+#### Please refer to docker-compose.yml for code behind setting up the web, db, and appsmith containers
 
