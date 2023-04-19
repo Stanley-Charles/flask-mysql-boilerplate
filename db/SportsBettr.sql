@@ -10203,7 +10203,7 @@ Create TABLE IF NOT EXISTS Comment
     CONSTRAINT CMPK PRIMARY KEY (UserID, ReactionID, CommentText),
     CONSTRAINT fk_05 FOREIGN KEY (UserID, ReactionID)
         REFERENCES Reaction(UserID, ReactionID)
-        ON DELETE restrict
+        ON DELETE CASCADE
 );
 
 INSERT INTO Comment(UserID,ReactionID,CommentText) VALUES ('jpearch0',1,'Aenean fermentum. Donec ut mauris eget massa tempor convallis.');
