@@ -26,7 +26,10 @@ During phase 1 we created 3 distinct User Personas. The first persona is a Verif
 During phase 2 we made our ER diagrams as well as our SQL file for our database. 
 
 ### Phase 3
+During phase 3 we created Mock data through Mockaroo and updated our SQL file accordingly (more on this later). We then created 2 bluprints, one for the Verified User persona and one for the System Admin Persona. We then ..... (add when Appsmith done)
 
+#### Changes from phase 2 to 3 and disclaimers
+When making Mockaroo data we ran into some small issues, mainly due to Mockaroo not being able to create distinct Strings. Due to this we changed/added some Primary Keys which had to be integrs. This is because we could then use "Row Number" on Mockaroo to guarantee that they would be distinct. Due to this our SQL file was changed from Phase 2. 
 
 
 
