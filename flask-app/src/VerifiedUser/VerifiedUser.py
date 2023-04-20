@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify, make_response
-import json
+import json, re
 from src import db
 
 
@@ -113,15 +113,16 @@ def get_Player_Prop_date(date):
     the_response.mimetype = 'application/json'
     return the_response
 
-@VerifiedUser.route('/change/<PostID>', methods=['PUT'])
-def update_post_content(PostID):
+@VerifiedUser.route('/change', methods=['PUT'])
+def update_post_content():
     the_data = request.json
+    PostId = the_data['PostId']
     Content = the_data['Content']
 
     the_query = 'UPDATE Post SET Content = %s WHERE PostID = %s;'
     #current_app.logger.info(the_query)
     cursor = db.get_db().cursor()
-    cursor.execute(the_query, (Content, PostID))
+    cursor.execute(the_query, (Content, PostId))
     db.get_db().commit()
     return jsonify ({"message": "Content changed successfully"}),200
 
@@ -191,11 +192,11 @@ def delete_user():
 @VerifiedUser.route('/login', methods=['GET'])
 def vu_login():
     the_data = request.json
-    UserID = the_data['UserID']
+    UserId = the_data['UserId']
     UserPassword = the_data['UserPassword']
-    the_query = 'SELECT * FROM VerifiedUser WHERE UserId = %s AND UserPassword = %s;'
+    the_query = 'SELECT * FROM VerifiedUser WHERE UserId = %s AND UserPassword = %s'
     cursor = db.get_db().cursor()
-    cursor.execute(the_query, (UserID, UserPassword))
+    cursor.execute(the_query, (UserId, UserPassword))
     result = cursor.fetchone()
     if result:
         return "Success"

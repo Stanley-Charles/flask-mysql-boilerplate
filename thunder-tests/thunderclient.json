@@ -158,16 +158,16 @@
     "colId": "4693cc58-4098-45d0-98ec-df296e3bbd91",
     "containerId": "d5882fd5-bde9-4ada-b7c9-6fce575f07f2",
     "name": "ChangePostContent1",
-    "url": "localhost:8001/vu/change/200",
+    "url": "localhost:8001/vu/change",
     "method": "PUT",
     "sortNum": 40000,
     "created": "2023-04-19T05:07:36.648Z",
-    "modified": "2023-04-19T05:12:38.932Z",
+    "modified": "2023-04-20T00:33:58.032Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"Content\": \"This prop for team will hit today because...\"\n}",
+      "raw": "{\n  \"PostId\": 200,\n  \"Content\": \"This prop for team will hit today because...\"\n}",
       "form": []
     },
     "tests": []
@@ -177,16 +177,16 @@
     "colId": "4693cc58-4098-45d0-98ec-df296e3bbd91",
     "containerId": "d5882fd5-bde9-4ada-b7c9-6fce575f07f2",
     "name": "ChangePostContent2",
-    "url": "localhost:8001/vu/change/1",
+    "url": "localhost:8001/vu/change",
     "method": "PUT",
     "sortNum": 50000,
     "created": "2023-04-19T05:15:59.875Z",
-    "modified": "2023-04-19T05:16:37.619Z",
+    "modified": "2023-04-20T00:34:52.479Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"Content\": \"This prop for team will definitley not today because...\"\n}",
+      "raw": "{\n  \"PostId\": 1,\n  \"Content\": \"This prop for team will definitley hit today because...\"\n}",
       "form": []
     },
     "tests": []
@@ -305,6 +305,25 @@
     "body": {
       "type": "json",
       "raw": "{\n  \"UserID\": \"bstempel5\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "74fe76d2-e22b-4bdc-9adc-56001ca1966a",
+    "colId": "4693cc58-4098-45d0-98ec-df296e3bbd91",
+    "containerId": "",
+    "name": "Login",
+    "url": "localhost:8001/vu/login",
+    "method": "GET",
+    "sortNum": 100000,
+    "created": "2023-04-19T23:46:26.914Z",
+    "modified": "2023-04-20T00:08:21.652Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"UserId\": \"aainscoughm2\",\n  \"UserPassword\": \"Imu9pAOTPaV\"\n}",
       "form": []
     },
     "tests": []

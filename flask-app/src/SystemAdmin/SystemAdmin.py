@@ -114,11 +114,11 @@ def add_new_admin():
 @SystemAdmin.route('/delete', methods=['DELETE'])
 def delete_admin():
     the_data = request.json
-    AdminID = the_data['AdminID']
+    AdminId = the_data['AdminId']
     the_query = 'DELETE FROM SystemAdmin WHERE AdminId = %s'
     #current_app.logger.info(the_query)
     cursor = db.get_db().cursor()
-    cursor.execute(the_query, (AdminID))
+    cursor.execute(the_query, (AdminId))
     db.get_db().commit()
     return jsonify({"message": "Deleted User successfully"}), 200
 
