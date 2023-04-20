@@ -23,7 +23,7 @@ def get_all_verified_users():
 
     return jsonify(json_data)
 
-# Get all the verified users
+# Get all the Posts
 @VerifiedUser.route('/Post', methods=['GET'])
 def get_all_posts():
     cursor = db.get_db().cursor()
@@ -113,6 +113,7 @@ def get_Player_Prop_date(date):
     the_response.mimetype = 'application/json'
     return the_response
 
+#Change the content of a specific Post
 @VerifiedUser.route('/change', methods=['PUT'])
 def update_post_content():
     the_data = request.json
@@ -126,7 +127,7 @@ def update_post_content():
     db.get_db().commit()
     return jsonify ({"message": "Content changed successfully"}),200
 
-# Get the count of Posts for a Specific UserS
+# Get the count of Posts for a Specific User
 @VerifiedUser.route('/PostCount/<userID>', methods=['GET'])
 def get_post_count(userID):
     cursor = db.get_db().cursor()
@@ -141,7 +142,7 @@ def get_post_count(userID):
     the_response.mimetype = 'application/json'
     return the_response
 
-#Add another admin(post request)
+#Add another Post (post request)
 @VerifiedUser.route('/AddPost', methods=['POST'])
 def add_new_post():
     the_data = request.json
@@ -159,7 +160,7 @@ def add_new_post():
     db.get_db().commit()
     return jsonify({"message": "Added User successfully"}), 200
 
-#Delete a post from the table (Delete request)
+#Delete your Verified User Account (Delete request)
 @VerifiedUser.route('/delete/user', methods=['DELETE'])
 def delete_user():
     the_data = request.json
@@ -172,23 +173,8 @@ def delete_user():
     return jsonify({"message": "Deleted User successfully"}), 200
 
 
-# # Get All Posts details for Verified User with particular userID
-# @VerifiedUser.route('/Win/<userID>', methods=['GET'])
-# def get_post(userID):
-#     cursor = db.get_db().cursor()
-#     cursor.execute("select * from Post where UserID = '{0}'".format(userID))
-#     row_headers = [x[0] for x in cursor.description]
-#     json_data = []
-#     theData = cursor.fetchall()
-#     for row in theData:
-#         json_data.append(dict(zip(row_headers, row)))
-#     the_response = make_response(jsonify(json_data))
-#     the_response.status_code = 200
-#     the_response.mimetype = 'application/json'
-#     return the_response
 
-
-#Make a login page for the system admin
+#Make a login page for the Verified User
 @VerifiedUser.route('/login', methods=['GET'])
 def vu_login():
     the_data = request.json

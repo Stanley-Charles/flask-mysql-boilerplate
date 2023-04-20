@@ -5,6 +5,7 @@ from src import db
 
 SystemAdmin = Blueprint('SystemAdmin', __name__)
 
+#This will get all posts for any Verified User
 @SystemAdmin.route('/allposts', methods=['GET'])
 def get_sitewide_posts():
     cursor = db.get_db().cursor()
@@ -21,6 +22,7 @@ def get_sitewide_posts():
 
     return jsonify(json_data)
 
+#This will get all the users
 @SystemAdmin.route('/allusers', methods=['GET'])
 def get_all_users():
     cursor = db.get_db().cursor()
@@ -46,7 +48,7 @@ def get_all_users():
 
     return jsonify(json_data)
 
-
+#This gets all the comments related to a specific PostID
 @SystemAdmin.route('/get_comments/<PostID>', methods=['GET'])
 def get_comments(PostID):
     cursor = db.get_db().cursor()
