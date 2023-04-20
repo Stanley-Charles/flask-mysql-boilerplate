@@ -26,7 +26,11 @@ During phase 1 we created 3 distinct User Personas. The first persona is a Verif
 During phase 2 we made our ER diagrams as well as our SQL file for our database. 
 
 ### Phase 3
-During phase 3 we created Mock data through Mockaroo and updated our SQL file accordingly (more on this later). We then created 2 bluprints, one for the Verified User persona and one for the System Admin Persona. We then ..... (add when Appsmith done)
+During Phase 3 of the project, we generated mock data using Mockaroo and updated the SQL file accordingly, which will be discussed later. We designed two blueprints for distinct user personas: Verified User and System Admin. Our application features multiple pages to represent different screens within the app.
+
+The application begins at the homepage, where users can identify themselves as either an admin or a verified user. Based on their selection, they are directed to the appropriate login page. If the login credentials are valid, they will gain access to their respective dashboard; otherwise, an error message will be displayed.
+
+Upon successful login, users are directed to their dashboard pages. For System Admins, this is the AdminDashboard, which provides an overview of all users, posts, and the ability to add or delete admins. Verified Users, on the other hand, are directed to the MyStuff page, where they can view, create, edit, or delete their posts.
 
 #### Changes from phase 2 to 3 and disclaimers
 #### When making Mockaroo data we ran into some small issues, mainly due to Mockaroo not being able to create distinct Strings. Due to this we changed/added some Primary Keys which had to be integrs. This is because we could then use "Row Number" on Mockaroo to guarantee that they would be distinct. Due to this our SQL file was changed a fair amount from Phase 2, which in turn would make our diagram different as well. We hope that this is acceptable because there was no error in the original file, and that if nit using Mock Data, that file would have been able to stand.
